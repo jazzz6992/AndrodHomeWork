@@ -47,7 +47,6 @@ public class SwitchTextActivity extends AppCompatActivity implements View.OnClic
         }
     }
 
-
     @Override
     public void onClick(View v) {
         switchText();
@@ -55,29 +54,18 @@ public class SwitchTextActivity extends AppCompatActivity implements View.OnClic
 
     private void switchText() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            Animator anim = enableView(firstTextView, false);
-            anim.start();
-            anim = enableView(secondTextView, false);
-            anim.start();
+            enableView(firstTextView, false);
+            enableView(secondTextView, false);
             simpleSwitch();
-            anim = enableView(firstTextView, true);
-            anim.start();
-            anim = enableView(secondTextView, true);
-            anim.start();
+            enableView(firstTextView, true);
+            enableView(secondTextView, true);
         } else {
             simpleSwitch();
         }
     }
 
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        outState.putString(KEY_FIRST_TEXT, firstTextView.getText().toString());
-        outState.putString(KEY_SECOND_TEXT, secondTextView.getText().toString());
-    }
-
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    private Animator enableView(final View view, boolean enable) {
+    private void enableView(final View view, boolean enable) {
         Animator animator;
         if (enable) {
             animator = ViewAnimationUtils.createCircularReveal(view, view.getWidth() / 2, view.getHeight() / 2, 0, view.getWidth());
@@ -98,12 +86,19 @@ public class SwitchTextActivity extends AppCompatActivity implements View.OnClic
                 }
             });
         }
-        return animator;
+        animator.start();
     }
 
     private void simpleSwitch() {
         String textTmp = firstTextView.getText().toString();
         firstTextView.setText(secondTextView.getText());
         secondTextView.setText(textTmp);
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString(KEY_FIRST_TEXT, firstTextView.getText().toString());
+        outState.putString(KEY_SECOND_TEXT, secondTextView.getText().toString());
     }
 }
