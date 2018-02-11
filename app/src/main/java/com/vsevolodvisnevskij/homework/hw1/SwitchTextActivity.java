@@ -16,6 +16,12 @@ import com.vsevolodvisnevskij.homework.R;
 public class SwitchTextActivity extends AppCompatActivity implements View.OnClickListener {
     private TextView firstTextView;
     private TextView secondTextView;
+    private View.OnClickListener listener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            switchText();
+        }
+    };
     private static final String KEY_FIRST_TEXT = "FIRST_TEXT";
     private static final String KEY_SECOND_TEXT = "SECOND_TEXT";
 
@@ -34,12 +40,6 @@ public class SwitchTextActivity extends AppCompatActivity implements View.OnClic
                 switchText();
             }
         });
-        View.OnClickListener listener = new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                switchText();
-            }
-        };
         switchButton.setOnClickListener(listener);
         if (savedInstanceState != null) {
             firstTextView.setText(savedInstanceState.getString(KEY_FIRST_TEXT));

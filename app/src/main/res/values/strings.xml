@@ -3,4 +3,25 @@
     <string name="kruchu_text">Кручу-верчу</string>
     <string name="zaputat_text">Запутать хочу</string>
     <string name="switch_text">Switch</string>
+    <string name="flags_activity_label">Flags</string>
+    <string name="switch_activity_label">Switch</string>
+    <string name="homework1_button_text">hw 1</string>
+    <string name="homework2_button_text">hw 2</string>
+    <string name="homework3_button_text">hw 3</string>
+    <string name="homework4_button_text">hw 4</string>
+    <string name="homework5_button_text">hw 5</string>
+    <string name="homework6_button_text">hw 6</string>
+    <string name="homework7_button_text">hw 7</string>
+    <string name="homework8_button_text">hw 8</string>
+    <string name="homework9_button_text">hw 9</string>
+    <string name="homework10_button_text">hw 10</string>
+    <string name="homework11_button_text">hw 11</string>
+    <string name="homework12_button_text">hw 12</string>
+    <string name="homework13_button_text">hw 13</string>
+    <string name="homework14_button_text">hw 14</string>
+    <string name="homework15_button_text">hw 15</string>
+    <string name="homework16_button_text">hw 16</string>
+    <string name="homework17_button_text">hw 17</string>
+    <string name="homework18_button_text">hw 18</string>
+    <string name="patience_text">Be patient&#8230;</string>
 </resources>
