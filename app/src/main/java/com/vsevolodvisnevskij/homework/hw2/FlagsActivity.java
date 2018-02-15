@@ -4,19 +4,24 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TableRow;
 
+import com.squareup.leakcanary.LeakCanary;
 import com.vsevolodvisnevskij.homework.R;
 
 public class FlagsActivity extends AppCompatActivity {
-    LinearLayout.LayoutParams params;
+    private LinearLayout.LayoutParams params;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (LeakCanary.isInAnalyzerProcess(this)) {
+            return;
+        }
+        LeakCanary.install(getApplication());
         setContentView(R.layout.activity_flags);
         DisplayMetrics displaymetrics = getResources().getDisplayMetrics();
         //получаем коофициент плотности пикселей для последующего получения правильного отступа в физических пикселях

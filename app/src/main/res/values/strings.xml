@@ -24,4 +24,8 @@
     <string name="homework17_button_text">hw 17</string>
     <string name="homework18_button_text">hw 18</string>
     <string name="patience_text">Be patient&#8230;</string>
+    <string name="img_link">link</string>
+    <string name="downloaded_image">Downloaded image</string>
+    <string name="show_bc_string">Show buildConfig \n string</string>
+    <string name="get_img_text">Get img</string>
 </resources>

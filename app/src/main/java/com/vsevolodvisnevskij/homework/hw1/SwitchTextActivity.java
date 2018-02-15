@@ -11,6 +11,7 @@ import android.view.ViewAnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.squareup.leakcanary.LeakCanary;
 import com.vsevolodvisnevskij.homework.R;
 
 public class SwitchTextActivity extends AppCompatActivity implements View.OnClickListener {
@@ -29,6 +30,10 @@ public class SwitchTextActivity extends AppCompatActivity implements View.OnClic
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (LeakCanary.isInAnalyzerProcess(this)) {
+            return;
+        }
+        LeakCanary.install(getApplication());
         setContentView(R.layout.activity_switch_text);
         firstTextView = findViewById(R.id.first_textView);
         secondTextView = findViewById(R.id.second_textView);

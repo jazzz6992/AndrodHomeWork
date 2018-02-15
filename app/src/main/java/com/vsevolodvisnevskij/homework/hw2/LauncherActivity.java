@@ -7,8 +7,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.squareup.leakcanary.LeakCanary;
 import com.vsevolodvisnevskij.homework.R;
 import com.vsevolodvisnevskij.homework.hw1.SwitchTextActivity;
+import com.vsevolodvisnevskij.homework.hw3.RoundImageActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +20,10 @@ public class LauncherActivity extends AppCompatActivity implements View.OnClickL
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (LeakCanary.isInAnalyzerProcess(this)) {
+            return;
+        }
+        LeakCanary.install(getApplication());
         setContentView(R.layout.activity_launcher);
         List<Button> buttons = new ArrayList<>();
         buttons.add((Button) findViewById(R.id.homework1_button));
@@ -53,6 +59,10 @@ public class LauncherActivity extends AppCompatActivity implements View.OnClickL
                 break;
             case R.id.homework2_button:
                 intent = new Intent(this, FlagsActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.homework3_button:
+                intent = new Intent(this, RoundImageActivity.class);
                 startActivity(intent);
                 break;
             default:
