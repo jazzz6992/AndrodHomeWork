@@ -70,6 +70,7 @@ public class LauncherActivity extends AppCompatActivity implements View.OnClickL
                 intent = new Intent(this, AnimationActivity.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.animation_activity_in, R.anim.animation_activity_out);
+                break;
             default:
                 Toast.makeText(this, getResources().getString(R.string.patience_text), Toast.LENGTH_SHORT).show();
                 break;

@@ -56,7 +56,7 @@ public class OwlClockView extends FrameLayout {
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
-        int owlHeight = h > w ? h / 10 : w / 10;
+        int owlHeight = h > w ? h / 15 : w / 15;
         int owlWidth = (int) (owlHeight * 0.75);
         params = new LayoutParams(owlWidth, owlHeight, Gravity.CENTER);
         imageView.setLayoutParams(params);
