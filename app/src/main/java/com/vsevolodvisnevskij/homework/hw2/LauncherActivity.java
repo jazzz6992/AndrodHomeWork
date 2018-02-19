@@ -11,6 +11,7 @@ import com.squareup.leakcanary.LeakCanary;
 import com.vsevolodvisnevskij.homework.R;
 import com.vsevolodvisnevskij.homework.hw1.SwitchTextActivity;
 import com.vsevolodvisnevskij.homework.hw3.RoundImageActivity;
+import com.vsevolodvisnevskij.homework.hw4.AnimationActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -65,6 +66,10 @@ public class LauncherActivity extends AppCompatActivity implements View.OnClickL
                 intent = new Intent(this, RoundImageActivity.class);
                 startActivity(intent);
                 break;
+            case R.id.homework4_button:
+                intent = new Intent(this, AnimationActivity.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.animation_activity_in, R.anim.animation_activity_out);
             default:
                 Toast.makeText(this, getResources().getString(R.string.patience_text), Toast.LENGTH_SHORT).show();
                 break;

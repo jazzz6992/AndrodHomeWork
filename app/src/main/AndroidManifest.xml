@@ -26,6 +26,9 @@
             android:name=".hw2.FlagsActivity"
             android:label="@string/flags_activity_label" />
         <activity android:name=".hw3.RoundImageActivity" />
+        <activity android:name=".hw4.AnimationActivity" />
+        <activity android:name=".hw4.ClockActivity" />
+        <activity android:name=".hw4.OwlActivity"></activity>
     </application>
 
 </manifest>

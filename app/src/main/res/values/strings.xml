@@ -28,4 +28,7 @@
     <string name="downloaded_image">Downloaded image</string>
     <string name="show_bc_string">Show buildConfig \n string</string>
     <string name="get_img_text">Get img</string>
+    <string name="show_clock">Show clock</string>
+    <string name="show_owl">Show owl</string>
+    <string name="show_owl_clock">Show owl-clock</string>
 </resources>
