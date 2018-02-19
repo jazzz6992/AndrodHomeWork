@@ -20,6 +20,7 @@ public class AnimationActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = ClockActivity.newIntent(getApplicationContext(), ClockActivity.SIMPLE_CLOCK);
                 startActivity(intent);
+                setAnimation();
             }
         });
 
@@ -29,6 +30,7 @@ public class AnimationActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), OwlActivity.class);
                 startActivity(intent);
+                setAnimation();
             }
         });
         Button owlClockButton = findViewById(R.id.show_owl_clock_button);
@@ -37,6 +39,7 @@ public class AnimationActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = ClockActivity.newIntent(getApplicationContext(), ClockActivity.OWL_CLOCK);
                 startActivity(intent);
+                setAnimation();
             }
         });
     }
@@ -44,6 +47,10 @@ public class AnimationActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+        setAnimation();
+    }
+
+    public void setAnimation() {
         overridePendingTransition(R.anim.animation_activity_in, R.anim.animation_activity_out);
     }
 }
