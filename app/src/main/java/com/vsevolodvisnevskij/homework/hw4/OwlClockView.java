@@ -47,13 +47,19 @@ public class OwlClockView extends FrameLayout {
     private void init() {
         clockView = new ClockView(getContext());
         imageView = new ImageView(getContext());
-        //я понимаю, что это не правильно. буду задавать вопросы
-        params = new LayoutParams(150, 200, Gravity.CENTER);
-        imageView.setLayoutParams(params);
         imageView.setBackgroundResource(R.drawable.owl_animation_list);
         owlAnimation = (AnimationDrawable) imageView.getBackground();
         addView(clockView);
         addView(imageView);
+    }
+
+    @Override
+    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+        super.onSizeChanged(w, h, oldw, oldh);
+        int owlHeight = h > w ? h / 10 : w / 10;
+        int owlWidth = (int) (owlHeight * 0.75);
+        params = new LayoutParams(owlWidth, owlHeight, Gravity.CENTER);
+        imageView.setLayoutParams(params);
     }
 
     @Override
