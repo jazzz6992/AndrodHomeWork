@@ -31,4 +31,7 @@
     <string name="show_clock">Show clock</string>
     <string name="show_owl">Show owl</string>
     <string name="show_owl_clock">Show owl-clock</string>
+    <string name="wifi_state">WiFi state</string>
+    <string name="turn_wifi_off">Turn wifi off</string>
+    <string name="turn_wifi_on">Turn wifi on</string>
 </resources>
