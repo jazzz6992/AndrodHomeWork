@@ -38,6 +38,7 @@
             android:enabled="true"
             android:exported="false" />
 
+        <activity android:name=".hw6.StockActivity"></activity>
     </application>
 
 </manifest>

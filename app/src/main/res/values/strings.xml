@@ -34,4 +34,13 @@
     <string name="wifi_state">WiFi state</string>
     <string name="turn_wifi_off">Turn wifi off</string>
     <string name="turn_wifi_on">Turn wifi on</string>
+    <string name="stock_id">Id = %d</string>
+    <string name="stock_name">Stock name = %s</string>
+    <string name="stock_bid">Stock bid = %.3f</string>
+    <string name="stock_min_price">Stock min price = %.3f</string>
+    <string name="stock_max_price">Stock max price = %.3f</string>
+    <string name="search">Search</string>
+    <string name="show_all">Show all</string>
+    <string name="sort_by_price">Sort by price</string>
+    <string name="sort_by_name">Sort by name</string>
 </resources>
