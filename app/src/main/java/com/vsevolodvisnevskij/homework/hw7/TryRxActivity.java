@@ -45,7 +45,7 @@ public class TryRxActivity extends AppCompatActivity {
         if (savedInstanceState != null) {
             counter = savedInstanceState.getInt(KEY_COUNTER);
         }
-        disposable = publishSubject.subscribe(i -> ((ConsumerFragment) fragment).getConsumerTextView().setText(i + ""));
+        disposable = publishSubject.subscribe(i -> ((ConsumerFragment) fragment).getConsumerTextView().setText(String.valueOf(i)));
     }
 
     @Override
