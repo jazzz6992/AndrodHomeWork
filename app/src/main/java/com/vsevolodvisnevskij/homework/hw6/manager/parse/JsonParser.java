@@ -1,7 +1,10 @@
 package com.vsevolodvisnevskij.homework.hw6.manager.parse;
 
+import android.util.Log;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.vsevolodvisnevskij.homework.hw6.manager.Manager;
 import com.vsevolodvisnevskij.homework.hw6.manager.interfaces.ParseCompleteListener;
 import com.vsevolodvisnevskij.homework.hw6.model.Model;
 import com.vsevolodvisnevskij.homework.hw6.model.entity.StockExchange;
@@ -25,7 +28,8 @@ public class JsonParser extends AbstractParser {
         builder.registerTypeAdapter(Date.class, new DateGsonConverter());
         Gson gson = builder.create();
         try {
-            stockExchange = gson.fromJson(new FileReader(source), StockExchange.class);
+            FileReader reader = new FileReader(source);
+            stockExchange = gson.fromJson(reader, StockExchange.class);
             getListener().onParseSuccess(stockExchange);
         } catch (FileNotFoundException e) {
             getListener().onParseFailed(e.getMessage());

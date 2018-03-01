@@ -1,5 +1,8 @@
 package com.vsevolodvisnevskij.homework.hw6.manager.parse;
 
+import android.util.Log;
+
+import com.vsevolodvisnevskij.homework.hw6.manager.Manager;
 import com.vsevolodvisnevskij.homework.hw6.model.Model;
 import com.vsevolodvisnevskij.homework.hw6.manager.interfaces.ParseCompleteListener;
 

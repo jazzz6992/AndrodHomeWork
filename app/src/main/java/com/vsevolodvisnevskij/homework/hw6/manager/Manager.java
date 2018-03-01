@@ -26,7 +26,7 @@ public class Manager implements ListForPrintChangeListener, DataChangedResultLis
     private static final String JSON_LINK = "http://kiparo.ru/t/stock.json";
     private final Model model;
     private final LocalBroadcastManager broadcastManager;
-    private static final String LOG_TAG = "myLogs";
+    public static final String LOG_TAG = "myLogs";
 
 
     public Manager(LocalBroadcastManager broadcastManager) {

@@ -38,7 +38,8 @@
             android:enabled="true"
             android:exported="false" />
 
-        <activity android:name=".hw6.StockActivity"></activity>
+        <activity android:name=".hw6.StockActivity" />
+        <activity android:name=".hw7.TryRxActivity"></activity>
     </application>
 
 </manifest>
