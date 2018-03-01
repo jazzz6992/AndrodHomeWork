@@ -26,12 +26,9 @@ public class TryRxActivity extends AppCompatActivity {
         setContentView(R.layout.activity_try_rx);
         publishSubject = PublishSubject.create();
         View view = findViewById(R.id.clickable);
-        view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                counter++;
-                publishSubject.onNext(counter);
-            }
+        view.setOnClickListener(v -> {
+            counter++;
+            publishSubject.onNext(counter);
         });
         FragmentManager manager = getSupportFragmentManager();
         if (manager.findFragmentById(R.id.container) == null) {
