@@ -9,6 +9,7 @@ import android.view.View;
 
 import com.vsevolodvisnevskij.homework.R;
 
+import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Function;
 import io.reactivex.subjects.PublishSubject;
@@ -24,12 +25,12 @@ public class TryRxActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_try_rx);
-        publishSubject = PublishSubject.create();
         View view = findViewById(R.id.clickable);
         view.setOnClickListener(v -> {
             counter++;
             publishSubject.onNext(counter);
         });
+        publishSubject = PublishSubject.create();
         FragmentManager manager = getSupportFragmentManager();
         if (manager.findFragmentById(R.id.container) == null) {
             fragment = ConsumerFragment.getInstance();
