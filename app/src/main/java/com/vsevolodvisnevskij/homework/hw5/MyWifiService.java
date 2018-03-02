@@ -7,8 +7,8 @@ import android.os.Binder;
 import android.os.IBinder;
 
 public class MyWifiService extends Service {
-  private   MyBinder binder;
-  private   WifiManager manager;
+    private MyBinder binder;
+    private WifiManager manager;
 
     public MyWifiService() {
     }

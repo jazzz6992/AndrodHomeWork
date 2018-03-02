@@ -39,8 +39,7 @@ public class Searcher implements Runnable {
             List<Stock> stocks = model.getStockExchange().getStock();
             List<Stock> result = new ArrayList<>();
             Matcher matcher;
-            for (Stock s :
-                    stocks) {
+            for (Stock s : stocks) {
                 matcher = pattern.matcher(s.getName().toLowerCase());
                 if (matcher.matches()) {
                     result.add(s);

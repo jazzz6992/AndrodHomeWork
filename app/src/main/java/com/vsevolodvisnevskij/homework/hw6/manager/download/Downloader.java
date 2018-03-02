@@ -1,10 +1,14 @@
 package com.vsevolodvisnevskij.homework.hw6.manager.download;
 
 
-import com.vsevolodvisnevskij.homework.hw6.model.Model;
 import com.vsevolodvisnevskij.homework.hw6.manager.interfaces.DownloadCompleteListener;
+import com.vsevolodvisnevskij.homework.hw6.model.Model;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 

@@ -9,15 +9,11 @@ import android.view.View;
 
 import com.vsevolodvisnevskij.homework.R;
 
-import io.reactivex.Observable;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Function;
 import io.reactivex.subjects.PublishSubject;
 
-public class TryRxActivity extends AppCompatActivity {
+public class TryRxActivity extends AppCompatActivity implements ObservableContract {
     private static final String KEY_COUNTER = "COUNTER";
     private PublishSubject<Integer> publishSubject;
-    private Disposable disposable;
     private Integer counter = 0;
     private Fragment fragment;
 
@@ -42,7 +38,6 @@ public class TryRxActivity extends AppCompatActivity {
         if (savedInstanceState != null) {
             counter = savedInstanceState.getInt(KEY_COUNTER);
         }
-        disposable = publishSubject.subscribe(i -> ((ConsumerFragment) fragment).getConsumerTextView().setText(String.valueOf(i)));
     }
 
     @Override
@@ -51,11 +46,9 @@ public class TryRxActivity extends AppCompatActivity {
         outState.putInt(KEY_COUNTER, counter);
     }
 
+
     @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        if (!disposable.isDisposed()) {
-            disposable.dispose();
-        }
+    public PublishSubject<Integer> getObservable() {
+        return publishSubject;
     }
 }

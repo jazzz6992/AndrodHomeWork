@@ -43,12 +43,15 @@ public class StockExchange {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
 
         StockExchange that = (StockExchange) o;
 
-        if (name != null ? !name.equals(that.name) : that.name != null) return false;
+        if (name != null ? !name.equals(that.name) : that.name != null)
+            return false;
         return (location != null ? location.equals(that.location) : that.location == null) && (date != null ? date.equals(that.date) : that.date == null) && (stock != null ? stock.equals(that.stock) : that.stock == null);
     }
 
@@ -64,13 +67,7 @@ public class StockExchange {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(getName())
-                .append("\n")
-                .append(getLocation())
-                .append("\n")
-                .append(getDate().toString())
-                .append("\n")
-                .append("Stocks:\n");
+        sb.append(getName()).append("\n").append(getLocation()).append("\n").append(getDate().toString()).append("\n").append("Stocks:\n");
         return sb.toString();
     }
 }

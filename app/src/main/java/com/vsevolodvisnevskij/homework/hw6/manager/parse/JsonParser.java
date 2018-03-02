@@ -1,10 +1,7 @@
 package com.vsevolodvisnevskij.homework.hw6.manager.parse;
 
-import android.util.Log;
-
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.vsevolodvisnevskij.homework.hw6.manager.Manager;
 import com.vsevolodvisnevskij.homework.hw6.manager.interfaces.ParseCompleteListener;
 import com.vsevolodvisnevskij.homework.hw6.model.Model;
 import com.vsevolodvisnevskij.homework.hw6.model.entity.StockExchange;

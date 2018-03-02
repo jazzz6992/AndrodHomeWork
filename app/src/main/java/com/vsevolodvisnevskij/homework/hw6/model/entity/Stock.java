@@ -58,14 +58,19 @@ public class Stock {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
 
         Stock stock = (Stock) o;
 
-        if (id != stock.id) return false;
-        if (Double.compare(stock.bid, bid) != 0) return false;
-        if (Double.compare(stock.minPrice, minPrice) != 0) return false;
+        if (id != stock.id)
+            return false;
+        if (Double.compare(stock.bid, bid) != 0)
+            return false;
+        if (Double.compare(stock.minPrice, minPrice) != 0)
+            return false;
         return Double.compare(stock.maxPrice, maxPrice) == 0 && visible == stock.visible && (name != null ? name.equals(stock.name) : stock.name == null);
     }
 
@@ -88,16 +93,7 @@ public class Stock {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("\tid = ")
-                .append(getId())
-                .append("\tname = ")
-                .append(getName())
-                .append("\tbid = ")
-                .append(getBid())
-                .append("\tmin price = ")
-                .append(getMinPrice())
-                .append("\tmax price = ").append(getMaxPrice())
-                .append("\n");
+        sb.append("\tid = ").append(getId()).append("\tname = ").append(getName()).append("\tbid = ").append(getBid()).append("\tmin price = ").append(getMinPrice()).append("\tmax price = ").append(getMaxPrice()).append("\n");
         return sb.toString();
     }
 }

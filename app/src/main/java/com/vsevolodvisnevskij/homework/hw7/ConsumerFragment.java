@@ -1,6 +1,8 @@
 package com.vsevolodvisnevskij.homework.hw7;
 
 
+import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -12,12 +14,16 @@ import android.widget.TextView;
 
 import com.vsevolodvisnevskij.homework.R;
 
+import io.reactivex.disposables.Disposable;
+
 /**
  * A simple {@link Fragment} subclass.
  */
 public class ConsumerFragment extends Fragment {
     public static final String KEY_COUNTER = "COUNTER";
     private TextView consumerTextView;
+    private ObservableContract contract;
+    private Disposable disposable;
 
     public ConsumerFragment() {
         // Required empty public constructor
@@ -53,8 +59,24 @@ public class ConsumerFragment extends Fragment {
         return fragment;
     }
 
-    public TextView getConsumerTextView() {
-        return getView().findViewById(R.id.consumer_textView);
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        Activity activity = getActivity();
+        if (activity != null && activity instanceof ObservableContract) {
+            contract = (ObservableContract) activity;
+        }
     }
 
+    @Override
+    public void onPause() {
+        super.onPause();
+        disposable.dispose();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        disposable = contract.getObservable().map(String::valueOf).subscribe(s -> consumerTextView.setText(s));
+    }
 }
