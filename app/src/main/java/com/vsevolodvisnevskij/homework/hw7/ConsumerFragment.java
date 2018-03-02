@@ -27,13 +27,14 @@ public class ConsumerFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_consumer, container, false);
+        View v = inflater.inflate(R.layout.fragment_consumer, container, false);
+        consumerTextView = v.findViewById(R.id.consumer_textView);
+        return v;
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        consumerTextView = view.findViewById(R.id.consumer_textView);
         if (savedInstanceState != null) {
             consumerTextView.setText(savedInstanceState.getString(KEY_COUNTER));
         }
