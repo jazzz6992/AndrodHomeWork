@@ -17,7 +17,7 @@ public class TryRxActivity extends AppCompatActivity {
     private static final String KEY_COUNTER = "COUNTER";
     private PublishSubject<Integer> publishSubject;
     private Disposable disposable;
-    private int counter = 0;
+    private Integer counter = 0;
     private Fragment fragment;
 
     @Override
