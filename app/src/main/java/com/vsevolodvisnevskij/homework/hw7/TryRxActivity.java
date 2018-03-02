@@ -32,13 +32,12 @@ public class TryRxActivity extends AppCompatActivity {
         });
         publishSubject = PublishSubject.create();
         FragmentManager manager = getSupportFragmentManager();
+        fragment = manager.findFragmentById(R.id.container);
         if (manager.findFragmentById(R.id.container) == null) {
             fragment = ConsumerFragment.getInstance();
             FragmentTransaction ft = manager.beginTransaction();
             ft.replace(R.id.container, fragment);
             ft.commit();
-        } else {
-            fragment = manager.findFragmentById(R.id.container);
         }
         if (savedInstanceState != null) {
             counter = savedInstanceState.getInt(KEY_COUNTER);
