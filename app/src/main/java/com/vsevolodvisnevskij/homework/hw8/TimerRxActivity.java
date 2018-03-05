@@ -28,6 +28,8 @@ public class TimerRxActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        d.dispose();
+        if (!d.isDisposed()) {
+            d.dispose();
+        }
     }
 }
