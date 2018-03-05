@@ -23,8 +23,7 @@ public class WiFiActivity extends AppCompatActivity {
     private ServiceConnection connection;
     private boolean bound = false;
     private MyWifiService.MyBinder binder;
-    private MyWifiService service;
-    BroadcastReceiver receiver;
+    private BroadcastReceiver receiver;
 
 
     @Override
