@@ -16,6 +16,7 @@ import com.vsevolodvisnevskij.homework.hw5.WiFiActivity;
 import com.vsevolodvisnevskij.homework.hw6.StockActivity;
 import com.vsevolodvisnevskij.homework.hw7.TryRxActivity;
 import com.vsevolodvisnevskij.homework.hw8.TimerRxActivity;
+import com.vsevolodvisnevskij.homework.hw9.ProfileActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -89,6 +90,10 @@ public class LauncherActivity extends AppCompatActivity implements View.OnClickL
                 break;
             case R.id.homework8_button:
                 intent = new Intent(this, TimerRxActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.homework9_button:
+                intent = new Intent(this, ProfileActivity.class);
                 startActivity(intent);
                 break;
             default:

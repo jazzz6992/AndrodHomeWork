@@ -4,8 +4,10 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#11a900</color>
     <color name="colorLightGreen">#d1ff9d</color>
+    <color name="darkGrey">#3e3e3e</color>
     <color name="colorYellow">#ffd640</color>
     <color name="colorBlue">#003cff</color>
     <color name="darkGray">#545454</color>
     <color name="aquamarine">#00bf83</color>
+    <color name="pink">#ff9dd1</color>
 </resources>
