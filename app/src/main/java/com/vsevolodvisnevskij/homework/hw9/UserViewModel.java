@@ -7,7 +7,6 @@ import android.graphics.drawable.Drawable;
 import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
-import com.squareup.picasso.Transformation;
 
 /**
  * Created by vsevolodvisnevskij on 07.03.2018.
@@ -15,6 +14,7 @@ import com.squareup.picasso.Transformation;
 
 public class UserViewModel extends BaseObservable {
     private User user;
+    private boolean loaded = false;
 
     public User getUser() {
         return user;
@@ -22,6 +22,7 @@ public class UserViewModel extends BaseObservable {
 
     public void setUser(User user) {
         this.user = user;
+        loaded = true;
         notifyChange();
     }
 
@@ -57,8 +58,13 @@ public class UserViewModel extends BaseObservable {
         return null;
     }
 
-    @BindingAdapter({"android:src", "android:error"})
-    public static void loadImage(ImageView view, String url, Drawable err) {
-        Picasso.with(view.getContext()).load(url).error(err).transform(new CircleTransformation()).into(view);
+    @Bindable
+    public boolean isLoaded() {
+        return loaded;
+    }
+
+    @BindingAdapter({"android:src", "android:error", "android:placeholder"})
+    public static void loadImage(ImageView view, String url, Drawable err, Drawable placeholder) {
+        Picasso.with(view.getContext()).load(url).placeholder(placeholder).error(err).transform(new CircleTransformation()).into(view);
     }
 }

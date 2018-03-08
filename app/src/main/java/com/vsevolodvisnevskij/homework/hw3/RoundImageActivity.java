@@ -65,7 +65,7 @@ public class RoundImageActivity extends AppCompatActivity {
     private void getImg(String link) {
         //как сделать, чтобы плейсхолдер не растягивался на всю ширину?? как сделать его тоже круглым???
         //почему при петеретягивании ползунка verticalBias картинка уходит в одну сторону, а placeholder в другую???
-        RequestOptions requestOptions = new RequestOptions().circleCrop().placeholder(R.drawable.ic_access_time_black_24dp).error(R.drawable.err);
+        RequestOptions requestOptions = new RequestOptions().circleCrop().placeholder(R.drawable.placeholder).error(R.drawable.err);
         Glide.with(getApplicationContext()).load(link).apply(requestOptions).into(imageView);
         imgLoaded = link;
     }
