@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">Home Work</string>
-    <string name="kruchu_text">Кручу-верчу</string>
-    <string name="zaputat_text">Запутать хочу</string>
     <string name="switch_text">Switch</string>
     <string name="flags_activity_label">Flags</string>
     <string name="switch_activity_label">Switch</string>

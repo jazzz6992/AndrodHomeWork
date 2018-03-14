@@ -63,8 +63,4 @@ public class UserViewModel extends BaseObservable {
         return loaded;
     }
 
-    @BindingAdapter({"android:src", "android:error", "android:placeholder"})
-    public static void loadImage(ImageView view, String url, Drawable err, Drawable placeholder) {
-        Picasso.with(view.getContext()).load(url).placeholder(placeholder).error(err).transform(new CircleTransformation()).into(view);
-    }
 }

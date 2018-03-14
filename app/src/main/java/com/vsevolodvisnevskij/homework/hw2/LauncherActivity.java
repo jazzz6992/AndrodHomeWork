@@ -26,30 +26,26 @@ public class LauncherActivity extends AppCompatActivity implements View.OnClickL
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (LeakCanary.isInAnalyzerProcess(this)) {
-            return;
-        }
-        LeakCanary.install(getApplication());
         setContentView(R.layout.activity_launcher);
         List<Button> buttons = new ArrayList<>();
-        buttons.add((Button) findViewById(R.id.homework1_button));
-        buttons.add((Button) findViewById(R.id.homework2_button));
-        buttons.add((Button) findViewById(R.id.homework3_button));
-        buttons.add((Button) findViewById(R.id.homework4_button));
-        buttons.add((Button) findViewById(R.id.homework5_button));
-        buttons.add((Button) findViewById(R.id.homework6_button));
-        buttons.add((Button) findViewById(R.id.homework7_button));
-        buttons.add((Button) findViewById(R.id.homework8_button));
-        buttons.add((Button) findViewById(R.id.homework9_button));
-        buttons.add((Button) findViewById(R.id.homework10_button));
-        buttons.add((Button) findViewById(R.id.homework11_button));
-        buttons.add((Button) findViewById(R.id.homework12_button));
-        buttons.add((Button) findViewById(R.id.homework13_button));
-        buttons.add((Button) findViewById(R.id.homework14_button));
-        buttons.add((Button) findViewById(R.id.homework15_button));
-        buttons.add((Button) findViewById(R.id.homework16_button));
-        buttons.add((Button) findViewById(R.id.homework17_button));
-        buttons.add((Button) findViewById(R.id.homework18_button));
+        buttons.add(findViewById(R.id.homework1_button));
+        buttons.add(findViewById(R.id.homework2_button));
+        buttons.add(findViewById(R.id.homework3_button));
+        buttons.add(findViewById(R.id.homework4_button));
+        buttons.add(findViewById(R.id.homework5_button));
+        buttons.add(findViewById(R.id.homework6_button));
+        buttons.add(findViewById(R.id.homework7_button));
+        buttons.add(findViewById(R.id.homework8_button));
+        buttons.add(findViewById(R.id.homework9_button));
+        buttons.add(findViewById(R.id.homework10_button));
+        buttons.add(findViewById(R.id.homework11_button));
+        buttons.add(findViewById(R.id.homework12_button));
+        buttons.add(findViewById(R.id.homework13_button));
+        buttons.add(findViewById(R.id.homework14_button));
+        buttons.add(findViewById(R.id.homework15_button));
+        buttons.add(findViewById(R.id.homework16_button));
+        buttons.add(findViewById(R.id.homework17_button));
+        buttons.add(findViewById(R.id.homework18_button));
         for (Button b : buttons) {
             b.setOnClickListener(this);
         }

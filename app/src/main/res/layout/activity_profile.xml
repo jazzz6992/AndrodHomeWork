@@ -7,7 +7,7 @@
         <import type="android.view.View" />
 
         <variable
-            name="userVM"
+            name="viewModel"
             type="com.vsevolodvisnevskij.homework.hw9.UserViewModel" />
     </data>
 
@@ -18,8 +18,8 @@
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@{userVM.userGender ? @color/aquamarine : @color/pink}"
-            android:visibility="@{userVM.loaded ? View.VISIBLE : View.GONE}">
+            android:background="@{viewModel.userGender ? @color/aquamarine : @color/pink}"
+            android:visibility="@{viewModel.loaded ? View.VISIBLE : View.GONE}">
 
             <ImageView
                 android:id="@+id/avatar_imageView"
@@ -30,7 +30,7 @@
                 android:contentDescription="@string/avatar_description"
                 android:error="@{@drawable/err}"
                 android:placeholder="@{@drawable/placeholder}"
-                android:src="@{userVM.userImgUrl}"
+                android:src="@{viewModel.userImgUrl}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -41,7 +41,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:text="@{userVM.userName}"
+                android:text="@{viewModel.userName}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/avatar_imageView" />
 
@@ -52,7 +52,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:text="@{userVM.userAge}"
+                android:text="@{viewModel.userAge}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/name_textView" />
 
@@ -63,7 +63,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:text="@{userVM.userGender ? @string/gender_male : @string/gender_female}"
+                android:text="@{viewModel.userGender ? @string/gender_male : @string/gender_female}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/age_textView" />
         </android.support.constraint.ConstraintLayout>
@@ -72,7 +72,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:visibility="@{userVM.loaded ? View.GONE : View.VISIBLE}" />
+            android:visibility="@{viewModel.loaded ? View.GONE : View.VISIBLE}" />
     </FrameLayout>
 
 

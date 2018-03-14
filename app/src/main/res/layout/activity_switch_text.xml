@@ -1,34 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/colorLightGreen"
-    android:gravity="center"
-    android:orientation="vertical"
-    tools:context="com.vsevolodvisnevskij.homework.hw1.SwitchTextActivity">
+<layout>
 
-    <TextView
-        android:id="@+id/first_textView"
-        style="@style/MyTextStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/kruchu_text" />
+    <data>
 
-    <TextView
-        android:id="@+id/second_textView"
-        style="@style/MyTextStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/zaputat_text" />
+        <variable
+            name="viewModel"
+            type="com.vsevolodvisnevskij.homework.hw1.SwitchViewModel"></variable>
+    </data>
 
-    <Button
-        android:id="@+id/switch_button"
-        style="?android:attr/buttonBarButtonStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/switch_text"
-        android:textColor="@color/colorPrimary" />
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorLightGreen"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:context="com.vsevolodvisnevskij.homework.hw1.SwitchTextActivity">
+
+        <TextView
+            android:id="@+id/first_textView"
+            style="@style/MyTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{v -> viewModel.changeText(v)}"
+            android:text="@{viewModel.firstText}" />
+
+        <TextView
+            android:id="@+id/second_textView"
+            style="@style/MyTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{v -> viewModel.changeText(v)}"
+            android:text="@{viewModel.secondText}" />
+
+        <Button
+            android:id="@+id/switch_button"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{v -> viewModel.changeText(v)}"
+            android:text="@string/switch_text"
+            android:textColor="@color/colorPrimary" />
 
 
-</LinearLayout>
+    </LinearLayout>
+</layout>

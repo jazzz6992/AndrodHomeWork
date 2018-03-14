@@ -2,27 +2,33 @@ package com.vsevolodvisnevskij.homework.hw2;
 
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TableRow;
 
-import com.squareup.leakcanary.LeakCanary;
 import com.vsevolodvisnevskij.homework.R;
+import com.vsevolodvisnevskij.homework.base.BaseMVVMActivity;
+import com.vsevolodvisnevskij.homework.base.BaseViewModel;
+import com.vsevolodvisnevskij.homework.databinding.ActivityFlagsBinding;
 
-public class FlagsActivity extends AppCompatActivity {
+public class FlagsActivity extends BaseMVVMActivity {
     private LinearLayout.LayoutParams params;
 
 
     @Override
+    public int provideLayoutId() {
+        return R.layout.activity_flags;
+    }
+
+    @Override
+    public BaseViewModel provideViewModel(Bundle bundle) {
+        return new FlagsViewModel();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (LeakCanary.isInAnalyzerProcess(this)) {
-            return;
-        }
-        LeakCanary.install(getApplication());
-        setContentView(R.layout.activity_flags);
         DisplayMetrics displaymetrics = getResources().getDisplayMetrics();
         //получаем коофициент плотности пикселей для последующего получения правильного отступа в физических пикселях
         float density = displaymetrics.density;
@@ -41,17 +47,17 @@ public class FlagsActivity extends AppCompatActivity {
             params = new TableRow.LayoutParams(flagWidth, flagHeight);
         }
         params.setMargins(margin, margin, margin, margin);
-        setFlagLayoutParams(R.id.austria_flag);
-        setFlagLayoutParams(R.id.poland_flag);
-        setFlagLayoutParams(R.id.italy_flag);
-        setFlagLayoutParams(R.id.columbia_flag);
-        setFlagLayoutParams(R.id.madagascar_flag);
-        setFlagLayoutParams(R.id.tai_flag);
-        setFlagLayoutParams(R.id.denmark_flag);
+        ActivityFlagsBinding activityFlagsBinding = (ActivityFlagsBinding) binding;
+        setFlagLayoutParams(activityFlagsBinding.austriaFlag);
+        setFlagLayoutParams(activityFlagsBinding.polandFlag);
+        setFlagLayoutParams(activityFlagsBinding.italyFlag);
+        setFlagLayoutParams(activityFlagsBinding.columbiaFlag);
+        setFlagLayoutParams(activityFlagsBinding.madagascarFlag);
+        setFlagLayoutParams(activityFlagsBinding.taiFlag);
+        setFlagLayoutParams(activityFlagsBinding.denmarkFlag);
     }
 
-    private void setFlagLayoutParams(int id) {
-        View view = findViewById(id);
+    private void setFlagLayoutParams(View view) {
         view.setLayoutParams(params);
     }
 }
