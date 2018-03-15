@@ -15,6 +15,11 @@
         android:layout_height="match_parent"
         tools:context="com.vsevolodvisnevskij.homework.hw3.RoundImageActivity">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.secretText}"/>
+
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="0dp"
@@ -24,10 +29,13 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:contentDescription="@string/downloaded_image"
+            app:error="@{@drawable/err}"
             app:layout_constraintBottom_toTopOf="@+id/img_link_editText"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:placeholder="@{@drawable/placeholder}"
+            app:src="@{viewModel.loadedLink}" />
 
         <EditText
             android:id="@+id/img_link_editText"
@@ -52,6 +60,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:background="@drawable/rounded_corners"
+            android:onClick="@{()->viewModel.loadImg()}"
             android:text="@string/get_img_text"
             app:layout_constraintBottom_toTopOf="@+id/get_secret_string_button"
             app:layout_constraintEnd_toEndOf="parent"
@@ -66,6 +75,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:background="@drawable/rounded_corners"
+            android:onClick="@{() -> viewModel.showSecretString()}"
             android:text="@string/show_bc_string"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

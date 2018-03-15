@@ -2,9 +2,7 @@ package com.vsevolodvisnevskij.homework.base;
 
 import android.databinding.BindingAdapter;
 import android.graphics.drawable.Drawable;
-import android.view.View;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 
 import com.squareup.picasso.Picasso;
 import com.vsevolodvisnevskij.homework.hw9.CircleTransformation;
@@ -14,8 +12,10 @@ import com.vsevolodvisnevskij.homework.hw9.CircleTransformation;
  */
 
 public class BindingAdapters {
-    @BindingAdapter({"android:src", "android:error", "android:placeholder"})
+    @BindingAdapter({"src", "error", "placeholder"})
     public static void loadImage(ImageView view, String url, Drawable err, Drawable placeholder) {
-        Picasso.with(view.getContext()).load(url).placeholder(placeholder).error(err).transform(new CircleTransformation()).into(view);
+        if (url != null && url.length() > 0) {
+            Picasso.with(view.getContext()).load(url).placeholder(placeholder).error(err).transform(new CircleTransformation()).into(view);
+        }
     }
 }

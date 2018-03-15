@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.vsevolodvisnevskij.homework.BR;
 
+
 public abstract class BaseMVVMActivity<Binding extends ViewDataBinding, ViewModel extends BaseViewModel> extends AppCompatActivity {
     protected Binding binding;
     protected ViewModel viewModel;
@@ -18,32 +19,40 @@ public abstract class BaseMVVMActivity<Binding extends ViewDataBinding, ViewMode
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        viewModel = provideViewModel(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, provideLayoutId());
+        viewModel = provideViewModel(savedInstanceState);
         binding.setVariable(BR.viewModel, viewModel);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        viewModel.onResume();
+        if (viewModel != null) {
+            viewModel.onResume();
+        }
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        viewModel.onPause();
+        if (viewModel != null) {
+            viewModel.onPause();
+        }
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        viewModel.onStart();
+        if (viewModel != null) {
+            viewModel.onStart();
+        }
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        viewModel.onStop();
+        if (viewModel != null) {
+            viewModel.onStop();
+        }
     }
 }

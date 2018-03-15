@@ -28,9 +28,9 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:contentDescription="@string/avatar_description"
-                android:error="@{@drawable/err}"
-                android:placeholder="@{@drawable/placeholder}"
-                android:src="@{viewModel.userImgUrl}"
+                app:error="@{@drawable/err}"
+                app:placeholder="@{@drawable/placeholder}"
+                app:src="@{viewModel.userImgUrl}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 

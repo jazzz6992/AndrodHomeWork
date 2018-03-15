@@ -5,7 +5,7 @@
 
         <variable
             name="viewModel"
-            type="com.vsevolodvisnevskij.homework.hw1.SwitchViewModel"></variable>
+            type="com.vsevolodvisnevskij.homework.hw1.SwitchViewModel" />
     </data>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
