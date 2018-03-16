@@ -8,8 +8,6 @@ import com.vsevolodvisnevskij.homework.base.BaseViewModel;
 
 public class SwitchTextActivity extends BaseMVVMActivity {
 
-    private static final String KEY_VIEW_MODEL = "view_model";
-
     @Override
     public int provideLayoutId() {
         return R.layout.activity_switch_text;

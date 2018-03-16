@@ -4,29 +4,32 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 
 import com.vsevolodvisnevskij.homework.R;
+import com.vsevolodvisnevskij.homework.base.BaseMVVMActivity;
+import com.vsevolodvisnevskij.homework.base.BaseViewModel;
 
 import io.reactivex.subjects.PublishSubject;
 
-public class TryRxActivity extends AppCompatActivity implements ObservableContract {
-    private static final String KEY_COUNTER = "COUNTER";
-    private PublishSubject<Integer> publishSubject;
-    private Integer counter = 0;
+public class TryRxActivity extends BaseMVVMActivity implements ObservableContract {
     private Fragment fragment;
+
+    @Override
+    public int provideLayoutId() {
+        return R.layout.activity_try_rx;
+    }
+
+    @Override
+    public BaseViewModel provideViewModel(Bundle bundle) {
+        if (bundle != null) {
+            return (ObservableViewModel) bundle.getSerializable(KEY_VIEW_MODEL);
+        }
+        return new ObservableViewModel();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_try_rx);
-        View view = findViewById(R.id.clickable);
-        view.setOnClickListener(v -> {
-            counter++;
-            publishSubject.onNext(counter);
-        });
-        publishSubject = PublishSubject.create();
         FragmentManager manager = getSupportFragmentManager();
         fragment = manager.findFragmentById(R.id.container);
         if (manager.findFragmentById(R.id.container) == null) {
@@ -35,20 +38,16 @@ public class TryRxActivity extends AppCompatActivity implements ObservableContra
             ft.replace(R.id.container, fragment);
             ft.commit();
         }
-        if (savedInstanceState != null) {
-            counter = savedInstanceState.getInt(KEY_COUNTER);
-        }
     }
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putInt(KEY_COUNTER, counter);
+        outState.putSerializable(KEY_VIEW_MODEL, viewModel);
     }
-
 
     @Override
     public PublishSubject<Integer> getObservable() {
-        return publishSubject;
+        return ((ObservableContract) viewModel).getObservable();
     }
 }

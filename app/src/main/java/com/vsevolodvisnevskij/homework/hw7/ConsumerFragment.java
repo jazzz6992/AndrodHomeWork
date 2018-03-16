@@ -1,29 +1,18 @@
 package com.vsevolodvisnevskij.homework.hw7;
 
 
-import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.vsevolodvisnevskij.homework.R;
-
-import io.reactivex.disposables.Disposable;
+import com.vsevolodvisnevskij.homework.base.BaseMVVMFragment;
+import com.vsevolodvisnevskij.homework.base.BaseViewModel;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ConsumerFragment extends Fragment {
-    public static final String KEY_COUNTER = "COUNTER";
-    private TextView consumerTextView;
-    private ObservableContract contract;
-    private Disposable disposable;
+public class ConsumerFragment extends BaseMVVMFragment {
 
     public ConsumerFragment() {
         // Required empty public constructor
@@ -31,25 +20,18 @@ public class ConsumerFragment extends Fragment {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_consumer, container, false);
-        consumerTextView = v.findViewById(R.id.consumer_textView);
-        return v;
+    public int provideLayoutId() {
+        return R.layout.fragment_consumer;
     }
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        if (savedInstanceState != null) {
-            consumerTextView.setText(savedInstanceState.getString(KEY_COUNTER));
+    public BaseViewModel provideViewModel(Bundle bundle) {
+        if (bundle != null) {
+            return (ConsumerViewModel) bundle.getSerializable(KEY_VIEW_MODEL);
         }
-    }
-
-    @Override
-    public void onSaveInstanceState(@NonNull Bundle outState) {
-        super.onSaveInstanceState(outState);
-        outState.putString(KEY_COUNTER, consumerTextView.getText().toString());
+        ConsumerViewModel consumerViewModel = new ConsumerViewModel();
+        consumerViewModel.setContract((ObservableContract) getActivity());
+        return consumerViewModel;
     }
 
     public static ConsumerFragment getInstance() {
@@ -60,23 +42,8 @@ public class ConsumerFragment extends Fragment {
     }
 
     @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        Activity activity = getActivity();
-        if (activity != null && activity instanceof ObservableContract) {
-            contract = (ObservableContract) activity;
-        }
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        disposable.dispose();
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        disposable = contract.getObservable().map(String::valueOf).subscribe(s -> consumerTextView.setText(s));
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putSerializable(KEY_VIEW_MODEL, viewModel);
     }
 }

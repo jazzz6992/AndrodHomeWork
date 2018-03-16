@@ -24,6 +24,7 @@ import java.util.List;
 
 public class Manager implements ListForPrintChangeListener, DataChangedResultListener, DownloadCompleteListener, ParseCompleteListener, Serializable {
     private static final String JSON_LINK = "http://kiparo.ru/t/stock.json";
+    public static final String ACTION_STOCKS_CHANGED = "stock_changed";
     private final Model model;
     private final LocalBroadcastManager broadcastManager;
     public static final String LOG_TAG = "myLogs";
@@ -85,7 +86,7 @@ public class Manager implements ListForPrintChangeListener, DataChangedResultLis
     }
 
     private void sendLocalBroadcast() {
-        Intent intent = new Intent(StockActivity.ACTION_STOCKS_CHANGED);
+        Intent intent = new Intent(ACTION_STOCKS_CHANGED);
         broadcastManager.sendBroadcast(intent);
     }
 }

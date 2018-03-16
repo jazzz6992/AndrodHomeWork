@@ -55,6 +55,16 @@ public class SwitchViewModel extends BaseViewModel {
     }
 
     @Override
+    public void onCreate() {
+
+    }
+
+    @Override
+    public void onDestroy() {
+
+    }
+
+    @Override
     public void onResume() {
         disposable = Observable.just(new TextFields("Кручу-верчу", "Запутать хочу")).subscribe(this::setTextFields);
     }

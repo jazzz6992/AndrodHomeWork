@@ -94,6 +94,16 @@ public class WiFiViewModel extends BaseViewModel {
 
     }
 
+    @Override
+    public void onCreate() {
+
+    }
+
+    @Override
+    public void onDestroy() {
+
+    }
+
     public void changeWiFiState() {
         if (bound) {
             binder.getService().changeWiFiState();

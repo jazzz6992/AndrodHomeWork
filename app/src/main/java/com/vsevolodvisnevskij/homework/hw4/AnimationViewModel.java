@@ -55,4 +55,14 @@ public class AnimationViewModel extends BaseViewModel {
     public void onPause() {
 
     }
+
+    @Override
+    public void onCreate() {
+
+    }
+
+    @Override
+    public void onDestroy() {
+
+    }
 }

@@ -8,7 +8,6 @@ import com.vsevolodvisnevskij.homework.base.BaseMVVMActivity;
 import com.vsevolodvisnevskij.homework.base.BaseViewModel;
 
 public class RoundImageActivity extends BaseMVVMActivity {
-    private static final String KEY_VIEW_MODEL = "view_model";
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {

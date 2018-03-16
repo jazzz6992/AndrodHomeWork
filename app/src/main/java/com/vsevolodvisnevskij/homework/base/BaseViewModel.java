@@ -17,4 +17,10 @@ public abstract class BaseViewModel extends BaseObservable implements Serializab
     public abstract void onResume();
 
     public abstract void onPause();
+
+    public abstract void onCreate();
+
+    public abstract void onDestroy();
+
+
 }
