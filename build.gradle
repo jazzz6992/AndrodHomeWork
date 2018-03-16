@@ -21,6 +21,48 @@ allprojects {
         jcenter()
     }
 }
+ext {
+    compileSdkVersion = 27
+    targetSdkVersion = 27
+    minSdkVersion = 19
+    buildToolsVersion = '27.0.2'
+    rxJavaVersion = '2.1.10'
+    rxAndroidVersion = '2.0.2'
+    gsonVersion = '2.8.2'
+    constraintVersion = '1.0.2'
+    picassoVersion = '2.5.2'
+    junitVersion = '4.12'
+    testVersion = '1.0.1'
+    espressoVersion = '3.0.1'
+    rxJavaVersion = '2.1.10'
+    rxAndroidVersion = '2.0.2'
+    rxPermissionsVersion = '0.9.5@aar'
+    rxBindingVersion = '2.1.1'
+
+
+    dependencies = [
+            supportAppcompat     : "com.android.support:appcompat-v7:$buildToolsVersion",
+            supportV4            : "com.android.support:support-v4:$buildToolsVersion",
+            supportDesign        : "com.android.support:design:$buildToolsVersion",
+            rxjava               : "io.reactivex.rxjava2:rxjava:$rxJavaVersion",
+            rxandroid            : "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion",
+            gson                 : "com.google.code.gson:gson:$gsonVersion",
+            constraintLayout     : "com.android.support.constraint:constraint-layout:$constraintVersion",
+            picasso              : "com.squareup.picasso:picasso:$picassoVersion",
+            junit                : "junit:junit:$junitVersion",
+            test                 : "com.android.support.test:runner:$testVersion",
+            espresso             : "com.android.support.test.espresso:espresso-core:$espressoVersion",
+            recyclerview         : "com.android.support:recyclerview-v7:$buildToolsVersion",
+            cardview             : "com.android.support:cardview-v7:$buildToolsVersion",
+            rxpermissions        : "com.tbruyelle.rxpermissions2:rxpermissions:$rxPermissionsVersion",
+            rxbinding            : "com.jakewharton.rxbinding2:rxbinding:$rxBindingVersion",
+            rxbindingSupport     : "com.jakewharton.rxbinding2:rxbinding-support-v4:$rxBindingVersion",
+            rxbindingAppcompat   : "com.jakewharton.rxbinding2:rxbinding-appcompat-v7:$rxBindingVersion",
+            rxbindingDesign      : "com.jakewharton.rxbinding2:rxbinding-design:$rxBindingVersion",
+            rxbindingRecyclerview: "com.jakewharton.rxbinding2:rxbinding-recyclerview-v7:$rxBindingVersion",
+
+    ]
+}
 
 task clean(type: Delete) {
     delete rootProject.buildDir

@@ -1,0 +1,24 @@
+<layout>
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.vsevolodvisnevskij.homework.screens.hw7.ConsumerViewModel" />
+    </data>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".screens.hw7.ConsumerFragment"
+    android:background="@android:color/background_light">
+
+    <TextView
+        android:id="@+id/consumer_textView"
+        style="@style/TextAppearance.AppCompat.Large.Inverse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@{viewModel.text}" />
+
+</FrameLayout>
+</layout>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.vsevolodvisnevskij.homework">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".screens.hw2.LauncherActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".screens.hw1.SwitchTextActivity"
+            android:label="@string/switch_activity_label" />
+        <activity
+            android:name=".screens.hw2.FlagsActivity"
+            android:label="@string/flags_activity_label" />
+        <activity android:name=".screens.hw3.RoundImageActivity" />
+        <activity android:name=".screens.hw4.AnimationActivity" />
+        <activity android:name=".screens.hw4.ClockActivity" />
+        <activity android:name=".screens.hw4.OwlActivity" />
+        <activity android:name=".screens.hw5.WiFiActivity" />
+
+        <service
+            android:name=".screens.hw5.MyWifiService"
+            android:enabled="true"
+            android:exported="false" />
+
+        <activity android:name=".screens.hw6.StockActivity" />
+        <activity android:name=".screens.hw7.TryRxActivity" />
+        <activity android:name=".screens.hw8.TimerRxActivity" />
+        <activity android:name=".screens.hw9.ProfileActivity" />
+        <activity android:name=".base.BaseMVVMActivity"></activity>
+    </application>
+
+</manifest>

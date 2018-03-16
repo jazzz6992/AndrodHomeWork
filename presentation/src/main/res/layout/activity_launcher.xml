@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:orientation="vertical"
+        tools:context=".screens.hw2.LauncherActivity">
+
+        <Button
+            android:id="@+id/homework1_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/homework1_button_text" />
+
+        <Button
+            android:id="@+id/homework2_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/homework2_button_text" />
+
+        <Button
+            android:id="@+id/homework3_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/homework3_button_text" />
+
+        <Button
+            android:id="@+id/homework4_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/homework4_button_text" />
+
+        <Button
+            android:id="@+id/homework5_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/homework5_button_text" />
+
+        <Button
+            android:id="@+id/homework6_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/homework6_button_text" />
+
+        <Button
+            android:id="@+id/homework7_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/homework7_button_text" />
+
+        <Button
+            android:id="@+id/homework8_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/homework8_button_text" />
+
+        <Button
+            android:id="@+id/homework9_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/homework9_button_text" />
+
+        <Button
+            android:id="@+id/homework10_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/homework10_button_text" />
+
+        <Button
+            android:id="@+id/homework11_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/homework11_button_text" />
+
+        <Button
+            android:id="@+id/homework12_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/homework12_button_text" />
+
+        <Button
+            android:id="@+id/homework13_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/homework13_button_text" />
+
+        <Button
+            android:id="@+id/homework14_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/homework14_button_text" />
+
+        <Button
+            android:id="@+id/homework15_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/homework15_button_text" />
+
+        <Button
+            android:id="@+id/homework16_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/homework16_button_text" />
+
+        <Button
+            android:id="@+id/homework17_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/homework17_button_text" />
+
+        <Button
+            android:id="@+id/homework18_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/homework18_button_text" />
+    </LinearLayout>
+</ScrollView>

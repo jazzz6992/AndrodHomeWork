@@ -1,0 +1,53 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion '27.0.2'
+    defaultConfig {
+        applicationId "com.vsevolodvisnevskij.homework"
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        buildConfigField "String", "API_ENDPOINT", '"Secret string..."'
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    def dependancy = rootProject.ext.dependencies
+    implementation dependancy.supportAppcompat
+    implementation dependancy.supportV4
+    implementation dependancy.supportDesign
+    implementation dependancy.rxjava
+    implementation dependancy.rxandroid
+    implementation dependancy.gson
+    implementation dependancy.constraintLayout
+    implementation dependancy.picasso
+    testImplementation dependancy.junit
+    androidTestImplementation dependancy.test
+    androidTestImplementation dependancy.espresso
+    implementation dependancy.recyclerview
+    implementation dependancy.cardview
+    implementation dependancy.rxpermissions
+    implementation dependancy.rxbinding
+    implementation dependancy.rxbindingSupport
+    implementation dependancy.rxbindingAppcompat
+    implementation dependancy.rxbindingDesign
+    implementation dependancy.rxbindingRecyclerview
+    implementation project(path: ':data')
+}
