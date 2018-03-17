@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 27
-    buildToolsVersion '27.0.2'
+    compileSdkVersion rootProject.compileSdkVersion
+    buildToolsVersion rootProject.buildToolsVersion
     defaultConfig {
         applicationId "com.vsevolodvisnevskij.homework"
         minSdkVersion rootProject.minSdkVersion
@@ -18,13 +18,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    compileOptions {
-        targetCompatibility JavaVersion.VERSION_1_8
-        sourceCompatibility JavaVersion.VERSION_1_8
-    }
 
     dataBinding {
         enabled = true
+    }
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
     }
 }
 
@@ -49,5 +49,9 @@ dependencies {
     implementation dependancy.rxbindingAppcompat
     implementation dependancy.rxbindingDesign
     implementation dependancy.rxbindingRecyclerview
+    implementation dependancy.archComponentsExtention
+    annotationProcessor dependancy.archComponentCompiler
+    implementation dependancy.dagger
+    annotationProcessor dependancy.daggerCompiler
     implementation project(path: ':data')
 }

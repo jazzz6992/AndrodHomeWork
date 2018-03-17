@@ -1,4 +1,4 @@
-package com.vsevolodvisnevskij.homework.screens.hw9;
+package com.vsevolodvisnevskij.domain.entity;
 
 /**
  * Created by vsevolodvisnevskij on 07.03.2018.

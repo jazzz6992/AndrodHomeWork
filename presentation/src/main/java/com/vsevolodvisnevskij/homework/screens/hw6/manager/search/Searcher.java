@@ -2,7 +2,7 @@ package com.vsevolodvisnevskij.homework.screens.hw6.manager.search;
 
 import com.vsevolodvisnevskij.homework.screens.hw6.manager.interfaces.ListForPrintChangeListener;
 import com.vsevolodvisnevskij.homework.screens.hw6.model.Model;
-import com.vsevolodvisnevskij.homework.screens.hw6.model.entity.Stock;
+import com.vsevolodvisnevskij.domain.entity.Stock;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,6 +1,6 @@
 package com.vsevolodvisnevskij.homework.screens.hw6.manager.interfaces;
 
-import com.vsevolodvisnevskij.homework.screens.hw6.model.entity.Stock;
+import com.vsevolodvisnevskij.domain.entity.Stock;
 
 import java.util.List;
 

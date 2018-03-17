@@ -17,7 +17,7 @@ import com.vsevolodvisnevskij.homework.base.BaseViewModel;
 import com.vsevolodvisnevskij.homework.databinding.ActivityStockBinding;
 import com.vsevolodvisnevskij.homework.databinding.ItemStockBinding;
 import com.vsevolodvisnevskij.homework.screens.hw6.manager.Manager;
-import com.vsevolodvisnevskij.homework.screens.hw6.model.entity.Stock;
+import com.vsevolodvisnevskij.domain.entity.Stock;
 
 import java.util.List;
 

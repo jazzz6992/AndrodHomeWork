@@ -1,4 +1,4 @@
-package com.vsevolodvisnevskij.homework.screens.hw6.model.entity;
+package com.vsevolodvisnevskij.domain.entity;
 
 public class Stock {
     private int id;

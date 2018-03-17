@@ -2,6 +2,7 @@ package com.vsevolodvisnevskij.homework.screens.hw9;
 
 import android.databinding.Bindable;
 
+import com.vsevolodvisnevskij.domain.entity.User;
 import com.vsevolodvisnevskij.homework.base.BaseViewModel;
 
 import java.util.Random;

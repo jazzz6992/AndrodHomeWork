@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 
-import com.vsevolodvisnevskij.homework.screens.hw6.StockActivity;
 import com.vsevolodvisnevskij.homework.screens.hw6.manager.download.Downloader;
 import com.vsevolodvisnevskij.homework.screens.hw6.manager.interfaces.DataChangedResultListener;
 import com.vsevolodvisnevskij.homework.screens.hw6.manager.interfaces.DownloadCompleteListener;
@@ -14,8 +13,8 @@ import com.vsevolodvisnevskij.homework.screens.hw6.manager.parse.AbstractParser;
 import com.vsevolodvisnevskij.homework.screens.hw6.manager.parse.JsonParser;
 import com.vsevolodvisnevskij.homework.screens.hw6.manager.search.Searcher;
 import com.vsevolodvisnevskij.homework.screens.hw6.model.Model;
-import com.vsevolodvisnevskij.homework.screens.hw6.model.entity.Stock;
-import com.vsevolodvisnevskij.homework.screens.hw6.model.entity.StockExchange;
+import com.vsevolodvisnevskij.domain.entity.Stock;
+import com.vsevolodvisnevskij.domain.entity.StockExchange;
 
 import java.io.File;
 import java.io.Serializable;

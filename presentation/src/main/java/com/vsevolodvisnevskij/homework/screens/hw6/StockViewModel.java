@@ -3,7 +3,7 @@ package com.vsevolodvisnevskij.homework.screens.hw6;
 import android.databinding.Bindable;
 
 import com.vsevolodvisnevskij.homework.base.BaseViewModel;
-import com.vsevolodvisnevskij.homework.screens.hw6.model.entity.Stock;
+import com.vsevolodvisnevskij.domain.entity.Stock;
 
 /**
  * Created by vsevolodvisnevskij on 15.03.2018.

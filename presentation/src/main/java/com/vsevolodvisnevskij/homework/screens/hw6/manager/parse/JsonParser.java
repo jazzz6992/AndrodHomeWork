@@ -4,7 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.vsevolodvisnevskij.homework.screens.hw6.manager.interfaces.ParseCompleteListener;
 import com.vsevolodvisnevskij.homework.screens.hw6.model.Model;
-import com.vsevolodvisnevskij.homework.screens.hw6.model.entity.StockExchange;
+import com.vsevolodvisnevskij.domain.entity.StockExchange;
 
 import java.io.File;
 import java.io.FileNotFoundException;
