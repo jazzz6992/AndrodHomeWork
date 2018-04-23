@@ -8,10 +8,11 @@ import android.support.v4.app.FragmentTransaction;
 import com.vsevolodvisnevskij.homework.R;
 import com.vsevolodvisnevskij.homework.base.BaseMVVMActivity;
 import com.vsevolodvisnevskij.homework.base.BaseViewModel;
+import com.vsevolodvisnevskij.homework.databinding.ActivityTryRxBinding;
 
 import io.reactivex.subjects.PublishSubject;
 
-public class TryRxActivity extends BaseMVVMActivity implements ObservableContract {
+public class TryRxActivity extends BaseMVVMActivity<ActivityTryRxBinding, ObservableViewModel> implements ObservableContract {
     private Fragment fragment;
 
     @Override
@@ -20,7 +21,7 @@ public class TryRxActivity extends BaseMVVMActivity implements ObservableContrac
     }
 
     @Override
-    public BaseViewModel provideViewModel(Bundle bundle) {
+    public ObservableViewModel provideViewModel(Bundle bundle) {
         if (bundle != null) {
             return (ObservableViewModel) bundle.getSerializable(KEY_VIEW_MODEL);
         }

@@ -2,12 +2,13 @@ package com.vsevolodvisnevskij.homework.screens.hw2;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
 import com.vsevolodvisnevskij.homework.R;
+import com.vsevolodvisnevskij.homework.base.BaseMVVMActivity;
+import com.vsevolodvisnevskij.homework.databinding.ActivityLaunchBinding;
 import com.vsevolodvisnevskij.homework.screens.hw1.SwitchTextActivity;
 import com.vsevolodvisnevskij.homework.screens.hw3.RoundImageActivity;
 import com.vsevolodvisnevskij.homework.screens.hw4.AnimationActivity;
@@ -20,31 +21,41 @@ import com.vsevolodvisnevskij.homework.screens.hw9.ProfileActivity;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LauncherActivity extends AppCompatActivity implements View.OnClickListener {
+public class LauncherActivity extends BaseMVVMActivity<ActivityLaunchBinding, LauncherViewModel> implements View.OnClickListener {
+
+    @Override
+    public int provideLayoutId() {
+        return R.layout.activity_launch;
+    }
+
+    @Override
+    public LauncherViewModel provideViewModel(Bundle bundle) {
+        return new LauncherViewModel();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_launcher);
         List<Button> buttons = new ArrayList<>();
-        buttons.add(findViewById(R.id.homework1_button));
-        buttons.add(findViewById(R.id.homework2_button));
-        buttons.add(findViewById(R.id.homework3_button));
-        buttons.add(findViewById(R.id.homework4_button));
-        buttons.add(findViewById(R.id.homework5_button));
-        buttons.add(findViewById(R.id.homework6_button));
-        buttons.add(findViewById(R.id.homework7_button));
-        buttons.add(findViewById(R.id.homework8_button));
-        buttons.add(findViewById(R.id.homework9_button));
-        buttons.add(findViewById(R.id.homework10_button));
-        buttons.add(findViewById(R.id.homework11_button));
-        buttons.add(findViewById(R.id.homework12_button));
-        buttons.add(findViewById(R.id.homework13_button));
-        buttons.add(findViewById(R.id.homework14_button));
-        buttons.add(findViewById(R.id.homework15_button));
-        buttons.add(findViewById(R.id.homework16_button));
-        buttons.add(findViewById(R.id.homework17_button));
-        buttons.add(findViewById(R.id.homework18_button));
+        buttons.add(binding.homework1Button);
+        buttons.add(binding.homework2Button);
+        buttons.add(binding.homework3Button);
+        buttons.add(binding.homework4Button);
+        buttons.add(binding.homework5Button);
+        buttons.add(binding.homework6Button);
+        buttons.add(binding.homework7Button);
+        buttons.add(binding.homework8Button);
+        buttons.add(binding.homework9Button);
+        buttons.add(binding.homework10Button);
+        buttons.add(binding.homework11Button);
+        buttons.add(binding.homework12Button);
+        buttons.add(binding.homework13Button);
+        buttons.add(binding.homework14Button);
+        buttons.add(binding.homework15Button);
+        buttons.add(binding.homework16Button);
+        buttons.add(binding.homework17Button);
+        buttons.add(binding.homework18Button);
+
         for (Button b : buttons) {
             b.setOnClickListener(this);
         }

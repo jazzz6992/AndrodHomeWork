@@ -7,8 +7,9 @@ import android.widget.ImageView;
 import com.vsevolodvisnevskij.homework.R;
 import com.vsevolodvisnevskij.homework.base.BaseMVVMActivity;
 import com.vsevolodvisnevskij.homework.base.BaseViewModel;
+import com.vsevolodvisnevskij.homework.databinding.ActivityOwlBinding;
 
-public class OwlActivity extends BaseMVVMActivity {
+public class OwlActivity extends BaseMVVMActivity<ActivityOwlBinding, BaseViewModel> {
 
     AnimationDrawable owlAnimation;
 

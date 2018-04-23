@@ -20,9 +20,9 @@ public class RoundImageActivity extends BaseMVVMActivity {
     }
 
     @Override
-    public BaseViewModel provideViewModel(Bundle bundle) {
+    public RoundImageViewModel provideViewModel(Bundle bundle) {
         if (bundle != null) {
-            return (BaseViewModel) bundle.getSerializable(KEY_VIEW_MODEL);
+            return (RoundImageViewModel) bundle.getSerializable(KEY_VIEW_MODEL);
         }
         return new RoundImageViewModel();
     }

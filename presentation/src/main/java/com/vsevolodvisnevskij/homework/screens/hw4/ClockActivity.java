@@ -9,7 +9,7 @@ import com.vsevolodvisnevskij.homework.base.BaseMVVMActivity;
 import com.vsevolodvisnevskij.homework.base.BaseViewModel;
 import com.vsevolodvisnevskij.homework.databinding.ActivityClockBinding;
 
-public class ClockActivity extends BaseMVVMActivity {
+public class ClockActivity extends BaseMVVMActivity<ActivityClockBinding, ClockViewModel> {
     private static final String EXTRA_CLOCK_TYPE = "CLOCK_TYPE";
     public static final int SIMPLE_CLOCK = 0;
     public static final int OWL_CLOCK = 1;
@@ -20,7 +20,7 @@ public class ClockActivity extends BaseMVVMActivity {
     }
 
     @Override
-    public BaseViewModel provideViewModel(Bundle bundle) {
+    public ClockViewModel provideViewModel(Bundle bundle) {
         int type = getIntent().getIntExtra(EXTRA_CLOCK_TYPE, -1);
         return new ClockViewModel(type, this);
     }

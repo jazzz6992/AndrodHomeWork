@@ -5,8 +5,10 @@ import android.os.Bundle;
 import com.vsevolodvisnevskij.homework.R;
 import com.vsevolodvisnevskij.homework.base.BaseMVVMActivity;
 import com.vsevolodvisnevskij.homework.base.BaseViewModel;
+import com.vsevolodvisnevskij.homework.databinding.ActivityAnimationBinding;
+import com.vsevolodvisnevskij.homework.databinding.ActivityProfileBinding;
 
-public class ProfileActivity extends BaseMVVMActivity {
+public class ProfileActivity extends BaseMVVMActivity<ActivityProfileBinding, UserViewModel> {
 
 
     @Override
@@ -15,7 +17,7 @@ public class ProfileActivity extends BaseMVVMActivity {
     }
 
     @Override
-    public BaseViewModel provideViewModel(Bundle bundle) {
+    public UserViewModel provideViewModel(Bundle bundle) {
         if (bundle != null) {
             return (UserViewModel) bundle.getSerializable(KEY_VIEW_MODEL);
         }

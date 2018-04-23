@@ -14,7 +14,7 @@ public class AnimationActivity extends BaseMVVMActivity {
     }
 
     @Override
-    public BaseViewModel provideViewModel(Bundle bundle) {
+    public AnimationViewModel provideViewModel(Bundle bundle) {
         return new AnimationViewModel(this);
     }
 
@@ -25,6 +25,7 @@ public class AnimationActivity extends BaseMVVMActivity {
     }
 
     public void setAnimation() {
+
         overridePendingTransition(R.anim.animation_activity_in, R.anim.animation_activity_out);
     }
 }

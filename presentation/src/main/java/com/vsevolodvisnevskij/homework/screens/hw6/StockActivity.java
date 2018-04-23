@@ -7,7 +7,7 @@ import com.vsevolodvisnevskij.homework.base.BaseMVVMActivity;
 import com.vsevolodvisnevskij.homework.base.BaseViewModel;
 import com.vsevolodvisnevskij.homework.databinding.ActivityStockBinding;
 
-public class StockActivity extends BaseMVVMActivity {
+public class StockActivity extends BaseMVVMActivity<ActivityStockBinding, RecyclerViewModel> {
 
     @Override
     public int provideLayoutId() {
@@ -15,7 +15,7 @@ public class StockActivity extends BaseMVVMActivity {
     }
 
     @Override
-    public BaseViewModel provideViewModel(Bundle bundle) {
+    public RecyclerViewModel provideViewModel(Bundle bundle) {
         return new RecyclerViewModel(this, (ActivityStockBinding) binding);
     }
 }

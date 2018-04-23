@@ -13,7 +13,7 @@ import com.vsevolodvisnevskij.homework.base.BaseViewModel;
 import com.vsevolodvisnevskij.homework.databinding.ActivityFlagsBinding;
 
 
-public class FlagsActivity extends BaseMVVMActivity {
+public class FlagsActivity extends BaseMVVMActivity<ActivityFlagsBinding, BaseViewModel> {
     private LinearLayout.LayoutParams params;
 
 

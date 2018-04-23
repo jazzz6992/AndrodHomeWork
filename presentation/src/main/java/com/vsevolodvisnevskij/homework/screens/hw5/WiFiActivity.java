@@ -7,7 +7,7 @@ import com.vsevolodvisnevskij.homework.base.BaseMVVMActivity;
 import com.vsevolodvisnevskij.homework.base.BaseViewModel;
 import com.vsevolodvisnevskij.homework.databinding.ActivityWiFiBinding;
 
-public class WiFiActivity extends BaseMVVMActivity {
+public class WiFiActivity extends BaseMVVMActivity<ActivityWiFiBinding, WiFiViewModel> {
 
     @Override
     public int provideLayoutId() {
@@ -15,7 +15,7 @@ public class WiFiActivity extends BaseMVVMActivity {
     }
 
     @Override
-    public BaseViewModel provideViewModel(Bundle bundle) {
+    public WiFiViewModel provideViewModel(Bundle bundle) {
         return new WiFiViewModel(this, (ActivityWiFiBinding) binding);
     }
 }

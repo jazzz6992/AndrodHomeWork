@@ -5,8 +5,9 @@ import android.os.Bundle;
 import com.vsevolodvisnevskij.homework.R;
 import com.vsevolodvisnevskij.homework.base.BaseMVVMActivity;
 import com.vsevolodvisnevskij.homework.base.BaseViewModel;
+import com.vsevolodvisnevskij.homework.databinding.ActivitySwitchTextBinding;
 
-public class SwitchTextActivity extends BaseMVVMActivity {
+public class SwitchTextActivity extends BaseMVVMActivity<ActivitySwitchTextBinding, SwitchViewModel> {
 
     @Override
     public int provideLayoutId() {
@@ -14,9 +15,9 @@ public class SwitchTextActivity extends BaseMVVMActivity {
     }
 
     @Override
-    public BaseViewModel provideViewModel(Bundle bundle) {
+    public SwitchViewModel provideViewModel(Bundle bundle) {
         if (bundle != null) {
-            return (BaseViewModel) bundle.getSerializable(KEY_VIEW_MODEL);
+            return (SwitchViewModel) bundle.getSerializable(KEY_VIEW_MODEL);
         }
         return new SwitchViewModel();
     }
